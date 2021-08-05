@@ -15,6 +15,7 @@ class Game():
 
 
 root = Tk()
+root.title('Mictlan')
 p = Player(10, "None")
 root.geometry('1690x1120')
 
@@ -40,6 +41,9 @@ img5 = PhotoImage(file="fight.png")
 img6 = PhotoImage(file="dead.png")
 img7 = PhotoImage(file="complete.png")
 img8 = PhotoImage(file="died.png")
+icon = PhotoImage(file="icon.png")
+root.iconphoto(False, icon)
+
 picture = canvas.create_image(20, 20, anchor=NW, image=img)
 
 class Start(Game):
@@ -57,12 +61,13 @@ class Start(Game):
 
     def choose_weapon(self, start):
 
-        labelfont = ('times', 10, 'bold')
         dagger = Button(frame, text="Dagger", font=labelfont, bg="grey", fg="red", height=10, width=30,
                       command=lambda: [p.set_weapon("Dagger"), p.set_damage("Dagger"),
-                                          self.entrance(), dagger.pack_forget(), longsword.pack_forget(), scimitar.pack_forget()])
-        longsword = Button(frame, text="Longsword", font=labelfont, bg="grey", fg="green", height=10, width=30, command=lambda:[p.set_weapon("Longsword"), p.set_damage("Longsword"),
-                                          self.entrance(), dagger.pack_forget(), longsword.pack_forget(), scimitar.pack_forget()])
+                                          self.entrance(), dagger.pack_forget(), longsword.pack_forget(),
+                                       scimitar.pack_forget()])
+        longsword = Button(frame, text="Longsword", font=labelfont, bg="grey", fg="green", height=10, width=30,
+                           command=lambda:[p.set_weapon("Longsword"), p.set_damage("Longsword"),
+                                        self.entrance(), dagger.pack_forget(), longsword.pack_forget(), scimitar.pack_forget()])
         scimitar = Button(frame, text="Scimitar", font=labelfont, bg="grey", fg="blue", height=10, width=30,
                          command=lambda: [p.set_weapon("Scimitar"), p.set_damage("Scimitar"),
                                           self.entrance(), dagger.pack_forget(), longsword.pack_forget(), scimitar.pack_forget()])

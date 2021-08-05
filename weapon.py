@@ -1,7 +1,7 @@
 
 class Dagger():
 
-    damage = 4
+    damage = 3
 
     def __init__(self, damage):
         self.damage = damage
@@ -22,7 +22,7 @@ class Longsword():
 
 
 class Scimitar():
-    damage = 5
+    damage = 4
 
     def __init__(self, damage):
         self.damage = damage
