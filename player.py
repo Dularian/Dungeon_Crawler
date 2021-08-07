@@ -24,11 +24,11 @@ class Player():
     def set_damage(self, weapon_name):
 
         if (weapon_name == "Dagger"):
-            self.damage = 4
+            self.damage = 3
         elif(weapon_name == "Longsword"):
             self.damage = 5
         else:
-            self.damage = 5
+            self.damage = 4
 
     def get_damage(self):
         return self.damage

@@ -144,7 +144,7 @@ class Start(Game):
                                          boss_health.delete(1.0, END), boss.set_HP(boss.get_HP()-p.get_damage()),
                                          boss_health.insert(INSERT, "Toby's HP: " + str(boss.get_HP())), self.end(boss, attack, run, potion, boss_health)])
         run = Button(frame, text="RUN", font=labelfont, bg="grey", fg="blue", height=10, width=30,
-                        command=lambda: [self.walking(), attack.pack_forget(), potion.pack_forget()])
+                        command=lambda: [self.entrance(), attack.pack_forget(), potion.pack_forget(), boss_health.pack_forget(), run.pack_forget()])
         potion = Button(frame, text="DRINK POTION", font=labelfont, bg="grey", fg="yellow", height=10, width=30,
                         command=lambda: [self.potion(potion), health.delete(1.0, END), health.insert(INSERT, p.get_HP())])
 
